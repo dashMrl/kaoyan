@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  kaoyan:
+    image: kaoyan
+    build: .
+    ports:
+      - 3003:3000
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /etc/locatime:/etc/locatime:ro
+    depends_on:
+      - mysql
+    networks:
+      - kaoyanApp
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=mysqlpwd
+    volumes:
+      - /etc/locatime:/etc/locatime:ro
+      - ./var/lib/mysql:/var/lib/mysql
+    networks:
+      - kaoyanApp
+
+networks:
+  kaoyanApp:
