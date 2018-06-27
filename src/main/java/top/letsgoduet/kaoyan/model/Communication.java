@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class Communication {
     @Id
     @GeneratedValue()
-    public long id;
+    public Long id;
     public String title;
     public String content;
-    public long uId;
+    public Long uId;
     public long createTime;
     public long updateTime;
     public int level;

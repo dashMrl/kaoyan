@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class EnrollmentRegulation {
     @Id
     @GeneratedValue()
-    public long id;
+    public Long id;
     public String title;
     public String contnent;
     public long sId;

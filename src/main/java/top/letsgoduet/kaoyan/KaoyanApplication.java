@@ -8,5 +8,6 @@ public class KaoyanApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(KaoyanApplication.class, args);
+
 	}
 }

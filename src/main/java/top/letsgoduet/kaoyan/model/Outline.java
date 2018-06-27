@@ -10,16 +10,16 @@ import javax.persistence.Table;
 public class Outline {
     @Id
     @GeneratedValue
-    public long id;
+    public Long id;
     public String title;
     public String content;
-    public long sId;
+    public Long sId;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,11 +39,11 @@ public class Outline {
         this.content = content;
     }
 
-    public long getsId() {
+    public Long getsId() {
         return sId;
     }
 
-    public void setsId(long sId) {
+    public void setsId(Long sId) {
         this.sId = sId;
     }
 }

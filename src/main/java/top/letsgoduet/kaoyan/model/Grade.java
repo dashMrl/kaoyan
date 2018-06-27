@@ -10,10 +10,10 @@ import javax.persistence.Table;
 public class Grade {
     @Id
     @GeneratedValue()
-    public long id;
+    public Long id;
     public String title;
     public String content;
-    public long sId;
+    public Long sId;
 
     public long getId() {
         return id;
