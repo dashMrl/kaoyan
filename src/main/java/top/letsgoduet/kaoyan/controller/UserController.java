@@ -6,7 +6,6 @@ import top.letsgoduet.kaoyan.model.User;
 import top.letsgoduet.kaoyan.repo.UserRepo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,13 +16,19 @@ public class UserController {
     private UserRepo userRepo;
 
     @PostMapping()
-    public User createUser(@RequestParam String uname, @RequestParam String pwd, @RequestParam String phone) {
-        User u = new User();
-        u.uname = uname;
-        u.pwd = pwd;
-        u.phone = phone;
-        u = userRepo.save(u);
-        return u;
+    public User createUser(@RequestParam(name = "uname") String uname,
+                           @RequestParam(name = "pwd") String pwd,
+                           @RequestParam(name = "phone") String phone) {
+        if (userRepo.findByPhone(phone) == null) {
+            User u = new User();
+            u.uname = uname;
+            u.pwd = pwd;
+            u.phone = phone;
+            u = userRepo.save(u);
+            return u;
+        } else {
+            return null;
+        }
     }
 
     @PutMapping()
@@ -40,7 +45,7 @@ public class UserController {
     @GetMapping(path = "/all")
     public List<User> getAllUser() {
         List<User> us = new ArrayList<>();
-        userRepo.findAll().forEach(u->{
+        userRepo.findAll().forEach(u -> {
             if (u.role != User.ROLE_MANAGER) {
                 us.add(u);
             }
