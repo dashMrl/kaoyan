@@ -29,7 +29,7 @@
 | id      | int    | 0、1、3          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| s_id    | int    | 学校id，external |
+| sId    | int    | 学校id，external |
 
 
 
@@ -42,7 +42,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| s_id    | int    | 学校id，external |
+| sId    | int    | 学校id，external |
 
 
 
@@ -53,7 +53,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| s_id    | int    | 学校id，external |
+| sId    | int    | 学校id，external |
 
 
 
@@ -64,7 +64,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| s_id    | int    | 学校id，external |
+| sId    | int    | 学校id，external |
 
 
 
@@ -75,7 +75,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| s_id    | int    | 学校id，external |
+| sId    | int    | 学校id，external |
 
 
 
@@ -86,7 +86,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| s_id    | int    | 学校id，external |
+| sId    | int    | 学校id，external |
 
 
 
@@ -98,7 +98,7 @@
 | title    | string |                               |
 | content  | stirng |                               |
 | u_id     | id     |                               |
-| create_t | long   |                               |
-| update_t | long   |                               |
+| create_time | long   |                               |
+| update_time | long   |                               |
 | level    | int    | 0、1、2，管理员==0，群众1<->2 |
 
