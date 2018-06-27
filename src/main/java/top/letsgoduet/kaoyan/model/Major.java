@@ -10,23 +10,16 @@ import javax.persistence.Table;
 public class Major {
     @Id
     @GeneratedValue()
-    public int id;
+    public long id;
     public String title;
     public String content;
-    public int sId;
+    public long sId;
 
-    public Major(int id, String title, String content, int sId) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.sId = sId;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -46,11 +39,11 @@ public class Major {
         this.content = content;
     }
 
-    public int getsId() {
+    public long getsId() {
         return sId;
     }
 
-    public void setsId(int sId) {
+    public void setsId(long sId) {
         this.sId = sId;
     }
 }

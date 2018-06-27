@@ -10,23 +10,16 @@ import javax.persistence.Table;
 public class EnrollmentRegulation {
     @Id
     @GeneratedValue()
-    public int id;
+    public long id;
     public String title;
     public String contnent;
-    public int sId;
+    public long sId;
 
-    public EnrollmentRegulation(int id, String title, String contnent, int sId) {
-        this.id = id;
-        this.title = title;
-        this.contnent = contnent;
-        this.sId = sId;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -46,11 +39,11 @@ public class EnrollmentRegulation {
         this.contnent = contnent;
     }
 
-    public int getsId() {
+    public long getsId() {
         return sId;
     }
 
-    public void setsId(int sId) {
+    public void setsId(long sId) {
         this.sId = sId;
     }
 }

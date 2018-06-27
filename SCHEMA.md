@@ -2,7 +2,7 @@
 
 | 字段名 | 类型   | 🌰              |
 | ------ | ------ | -------------- |
-| id     | int    | 0，自增        |
+| id     | long    | 0，自增        |
 | uname  | string | kongdadiao     |
 | phone  | stirng | 13018016800    |
 | pwd    | string | 原密码+md5     |
@@ -14,7 +14,7 @@
 
 | 字段名   | 类型   | 🌰                       |
 | -------- | ------ | ----------------------- |
-| id       | int    | 0                       |
+| id       | long    | 0                       |
 | name     | string | 华中科技大学            |
 | intro    | string | 渴🐔大学                 |
 | district | string | 地区，华中、华北        |
@@ -26,7 +26,7 @@
 
 | 字段名  | 类型   | 🌰                |
 | ------- | ------ | ---------------- |
-| id      | int    | 0、1、3          |
+| id      | long    | 0、1、3          |
 | title   | string | 标题             |
 | content | string | 正文             |
 | sId    | int    | 学校id，external |
@@ -39,10 +39,10 @@
 
 | 字段名  | 类型   | 🌰                |
 | ------- | ------ | ---------------- |
-| id      | int    | 0、1、2          |
+| id      | long    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | int    | 学校id，external |
+| sId    | long    | 学校id，external |
 
 
 
@@ -50,10 +50,10 @@
 
 | 字段名  | 类型   | 🌰                |
 | ------- | ------ | ---------------- |
-| id      | int    | 0、1、2          |
+| id      | long    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | int    | 学校id，external |
+| sId    | long    | 学校id，external |
 
 
 
@@ -64,7 +64,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | int    | 学校id，external |
+| sId    | long    | 学校id，external |
 
 
 
@@ -75,7 +75,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | int    | 学校id，external |
+| sId    | long    | 学校id，external |
 
 
 
@@ -86,7 +86,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | int    | 学校id，external |
+| sId    | long    | 学校id，external |
 
 
 
@@ -94,7 +94,7 @@
 
 | 字段名   | 类型   | 🌰                             |
 | -------- | ------ | ----------------------------- |
-| id       | int    |                               |
+| id       | long    |                               |
 | title    | string |                               |
 | content  | stirng |                               |
 | u_id     | id     |                               |

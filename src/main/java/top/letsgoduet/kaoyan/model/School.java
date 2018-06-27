@@ -10,25 +10,17 @@ import javax.persistence.Table;
 public class School {
     @Id
     @GeneratedValue()
-    public int id;
+    public long id;
     public String name;
     public String intro;
     public String district;
     public String site;
 
-    public School(int id, String name, String intro, String district, String site) {
-        this.id = id;
-        this.name = name;
-        this.intro = intro;
-        this.district = district;
-        this.site = site;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

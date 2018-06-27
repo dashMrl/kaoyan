@@ -10,25 +10,17 @@ import javax.persistence.Table;
 public class User {
     @Id
     @GeneratedValue()
-    public int id;
+    public long id;
     public String uname;
     public String pwd;
     public String phone;
     public int role;
 
-    public User(int id, String uname, String pwd, String phone, int role) {
-        this.id = id;
-        this.uname = uname;
-        this.pwd = pwd;
-        this.phone = phone;
-        this.role = role;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

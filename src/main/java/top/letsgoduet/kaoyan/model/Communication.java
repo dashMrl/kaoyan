@@ -10,29 +10,19 @@ import javax.persistence.Table;
 public class Communication {
     @Id
     @GeneratedValue()
-    public int id;
+    public long id;
     public String title;
     public String content;
-    public int uId;
+    public long uId;
     public long createTime;
     public long updateTime;
     public int level;
 
-    public Communication(int id, String title, String content, int uId, long createTime, long updateTime, int level) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.uId = uId;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.level = level;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -52,12 +42,12 @@ public class Communication {
         this.content = content;
     }
 
-    public int getU_id() {
+    public long getuId() {
         return uId;
     }
 
-    public void setU_id(int u_id) {
-        this.uId = u_id;
+    public void setuId(long uId) {
+        this.uId = uId;
     }
 
     public long getCreateTime() {
