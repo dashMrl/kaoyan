@@ -9,7 +9,7 @@ spring:
     username: root
     password: mysqlpwd
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/kaoyan?characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/kaoyan?characterEncoding=utf8&useSSL=false
     max-active: 20
     max-idle: 8
     min-idle: 8

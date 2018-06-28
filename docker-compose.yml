@@ -2,8 +2,7 @@ version: '3'
 
 services:
   kaoyan:
-    image: kaoyan
-    build: .
+    image: dashmrl/kaoyan:latest
     restart: always
     ports:
       - 3003:8080
