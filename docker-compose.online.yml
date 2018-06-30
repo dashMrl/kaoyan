@@ -6,26 +6,30 @@ services:
     restart: always
     expose:
       - "3306"
-    volumes:
-      - ./sql/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: mysqlpwd
+    volumes:
+      - /etc/locatime:/etc/locatime:ro
+      - ./var/lib/mysql:/var/lib/mysql
+      - ./sql/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
     networks:
       - kaoyan
+
   app:
-    image: dashmrl/kaoyan
+    build:
+      context: .
+      dockerfile: DockerfileOnline
     restart: always
     ports:
       - "127.0.0.1:3003:8080"
-      - "127.0.0.1:5005:5005"
     environment:
       TZ: Asia/Shanghai
-      JAVA_OPTS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y
+    volumes:
+      - /etc/locatime:/etc/locatime:ro
     depends_on:
       - mysql
     networks:
       - kaoyan
-
 networks:
   kaoyan:

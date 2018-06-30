@@ -1,6 +1,13 @@
+FROM gradle:jdk8-alpine AS builder
+WORKDIR /home/gradle/project
+COPY . .
+USER root
+RUN ./gradlew clean assemble --stacktrace
+
+
 FROM openjdk:8-jre-alpine
 WORKDIR /app
-COPY ./build/libs/kaoyan*.jar app.jar
+COPY --from=builder /home/gradle/project/build/libs/kaoyan*.jar app.jar
 COPY ./wait_mysql.sh ./wait_mysql.sh
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
