@@ -23,7 +23,7 @@ services:
     image: dashmrl/kaoyan:latest
     restart: always
     ports:
-      - "127.0.0.1:3003:8080"
+      - "3003:8080"
     environment:
       TZ: Asia/Shanghai
     volumes:
