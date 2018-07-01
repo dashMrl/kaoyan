@@ -12,7 +12,6 @@ public class User {
     public String uname;
     @Column(nullable = false)
     public String pwd;
-    @Column(name = "phone")
     public String phone;
     public int role=ROLE_USER;
 

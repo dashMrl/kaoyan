@@ -17,6 +17,7 @@ services:
       - kaoyan
 
   app:
+    image: dashmrl/kaoyan:latest
     build:
       context: .
       dockerfile: DockerfileOnline

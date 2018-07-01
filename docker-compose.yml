@@ -3,9 +3,6 @@ version: '3'
 services:
   mysql:
     image: mysql:latest
-    build:
-      context: .
-      dockerfile: DockerfileMySQL
     restart: always
     expose:
       - "3306"

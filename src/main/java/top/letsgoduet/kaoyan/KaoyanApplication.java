@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import top.letsgoduet.kaoyan.model.User;
 import top.letsgoduet.kaoyan.repo.UserRepo;
+import top.letsgoduet.kaoyan.utils.LoggerProvider;
 
 @SpringBootApplication
 public class KaoyanApplication {
@@ -18,7 +19,7 @@ public class KaoyanApplication {
     private  String pwd;
     @Value("${spring.admin.phone}")
     private  String phone;
-    private static final Logger LOGGER = LoggerFactory.getLogger(KaoyanApplication.class);
+    private static final Logger LOGGER = LoggerProvider.provideLogger(KaoyanApplication.class);
     public static void main(String[] args) {
         SpringApplication.run(KaoyanApplication.class, args);
     }
