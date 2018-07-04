@@ -73,4 +73,8 @@ public class Communication {
     public void setLevel(int level) {
         this.level = level;
     }
+
+    public static final int LEVEL_LOW = 2;
+    public static final int LEVEL_MID = 1;
+    public static final int LEVEL_HIGH = 0;
 }

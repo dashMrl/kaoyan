@@ -1,10 +1,12 @@
 package top.letsgoduet.kaoyan.model;
 
+
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User  {
     @Id
     @GeneratedValue()
     public Long id;
@@ -57,5 +59,4 @@ public class User {
 
     public static final  int ROLE_MANAGER=0;
     public static final  int ROLE_USER=1;
-
 }

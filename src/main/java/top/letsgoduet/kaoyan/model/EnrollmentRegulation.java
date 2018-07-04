@@ -1,25 +1,23 @@
 package top.letsgoduet.kaoyan.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "enroll_regu")
+@Table(name = "enrolment_regulation")
 public class EnrollmentRegulation {
     @Id
-    @GeneratedValue()
     public Long id;
     public String title;
-    public String contnent;
-    public long sId;
+    public String content;
+    public Long sId;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -31,19 +29,11 @@ public class EnrollmentRegulation {
         this.title = title;
     }
 
-    public String getContnent() {
-        return contnent;
+    public String getContent() {
+        return content;
     }
 
-    public void setContnent(String contnent) {
-        this.contnent = contnent;
-    }
-
-    public long getsId() {
-        return sId;
-    }
-
-    public void setsId(long sId) {
-        this.sId = sId;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

@@ -14,13 +14,17 @@ spring:
   datasource:
     username: root
     password: mysqlpwd
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mysql:3306/kaoyan?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
     max-active: 20
     max-idle: 8
     min-idle: 8
     initial-size: 10
-
+#  jwt:
+#    header: Authorization
+#    tokenHead: "Bearer "
+#    secret: mySecret
+#    expiration: 259200
   admin:
     uname: admin
     pwd: letsgodude

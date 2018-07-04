@@ -1,7 +1,6 @@
 package top.letsgoduet.kaoyan.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,11 +8,10 @@ import javax.persistence.Table;
 @Table(name = "reference_book")
 public class ReferenceBook {
     @Id
-    @GeneratedValue()
     public Long id;
     public String title;
     public String content;
-    public long sId;
+    public Long sId;
 
     public Long getId() {
         return id;

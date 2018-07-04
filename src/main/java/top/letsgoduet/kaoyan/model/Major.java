@@ -1,7 +1,6 @@
 package top.letsgoduet.kaoyan.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +8,6 @@ import javax.persistence.Table;
 @Table(name = "major")
 public class Major {
     @Id
-    @GeneratedValue()
     public Long id;
     public String title;
     public String content;
