@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import top.letsgoduet.kaoyan.model.User;
 import top.letsgoduet.kaoyan.repo.UserRepo;
+import top.letsgoduet.kaoyan.utils.Encryptor;
 import top.letsgoduet.kaoyan.utils.LoggerProvider;
 
 @SpringBootApplication
@@ -29,13 +30,17 @@ public class KaoyanApplication {
         return (args)->{
             User u = new User();
             u.uname = uname;
-            u.pwd = pwd;
+            u.pwd = Encryptor.md5(pwd);
             u.phone = phone;
             u.role = User.ROLE_MANAGER;
-            if (userRepo.findByPhone(phone) == null) {
+            User byPhone = userRepo.findByPhone(phone);
+            if (byPhone == null) {
                 userRepo.save(u);
             }else {
-                LOGGER.info("Admin already exists,no need to recreate");
+                byPhone.uname=u.uname;
+                byPhone.pwd = u.pwd;
+                userRepo.save(byPhone);
+                LOGGER.info("Admin already exists,no need to recreate,update....");
             }
             uname=null;
             pwd = null;

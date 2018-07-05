@@ -1,6 +1,9 @@
 # kaoyan
 Backend for kaoyan
 
+> Administrator
+> uname: admin
+> pwd: letsgodude
 
 ## Quick start
 If you have no JDK installed on your machine, execute command below to startup
