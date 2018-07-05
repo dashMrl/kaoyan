@@ -82,9 +82,9 @@ public class UserController {
         return null;
     }
 
-    @GetMapping
+    @GetMapping(path = "/{id}")
     public User getUser(HttpServletResponse response,
-                        @RequestParam Long id) {
+                        @PathVariable(name = "id") Long id) {
         Optional<User> optionalUser = userRepo.findById(id);
         if (!optionalUser.isPresent()) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
