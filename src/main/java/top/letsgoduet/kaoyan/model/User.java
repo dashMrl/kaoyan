@@ -2,20 +2,21 @@ package top.letsgoduet.kaoyan.model;
 
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "user")
-public class User  {
+public class User {
     @Id
-    @GeneratedValue()
+    @Column(name = "id")
     public Long id;
-    @Column(length = 16)
+    @Column(name = "uanme", nullable = false)
     public String uname;
-    @Column(nullable = false)
+    @Column(name = "pwd", nullable = false)
     public String pwd;
+    @Column(name = "phone")
     public String phone;
-    public int role=ROLE_USER;
+    @Column(name = "role",nullable = false)
+    public int role = ROLE_USER;
 
     public Long getId() {
         return id;
@@ -57,6 +58,6 @@ public class User  {
         this.role = role;
     }
 
-    public static final  int ROLE_MANAGER=0;
-    public static final  int ROLE_USER=1;
+    public static final int ROLE_MANAGER = 0;
+    public static final int ROLE_USER = 1;
 }

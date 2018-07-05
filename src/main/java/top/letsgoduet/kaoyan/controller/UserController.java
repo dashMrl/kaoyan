@@ -2,9 +2,11 @@ package top.letsgoduet.kaoyan.controller;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.web.bind.annotation.*;
 import top.letsgoduet.kaoyan.model.User;
 import top.letsgoduet.kaoyan.repo.UserRepo;
+import top.letsgoduet.kaoyan.utils.AdminUtil;
 import top.letsgoduet.kaoyan.utils.CookieHelper;
 import top.letsgoduet.kaoyan.utils.Encryptor;
 import top.letsgoduet.kaoyan.utils.LoggerProvider;
@@ -95,30 +97,25 @@ public class UserController {
     }
 
     @GetMapping(path = "/all")
-    public List<User> getAllUser(HttpServletRequest request, HttpServletResponseWrapper response) {
-        if (CookieHelper.isCookieValid(request.getCookies())) {
-            long uid = CookieHelper.decodeCookie2UID(request.getCookies());
-            User u = userRepo.findById(uid).orElse(null);
-            if (u == null) {
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-                return null;
-            }
-            if (u.id != 1) {
-                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                return null;
-            }
-            List<User> us = new ArrayList<>();
-            userRepo.findAll().forEach(user -> {
-                user.pwd = null;
-                if (user.role != User.ROLE_MANAGER) {
-                    us.add(user);
-                }
-            });
-            return us;
-        } else {
+    public List<User> getAllUser(
+            HttpServletRequest request,
+            HttpServletResponseWrapper response) {
+        if (!CookieHelper.isCookieValid(request.getCookies())) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return null;
         }
+        if (!AdminUtil.isAdmin(CookieHelper.decodeCookie2UID(request.getCookies()))) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            return null;
+        }
+        List<User> us = new ArrayList<>();
+        userRepo.findAll().forEach(user -> {
+            user.pwd = null;
+            if (user.role != User.ROLE_MANAGER) {
+                us.add(user);
+            }
+        });
+        return us;
 
     }
 

@@ -1,29 +1,34 @@
 package top.letsgoduet.kaoyan.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "comm")
 public class Communication {
     @Id
-    @GeneratedValue()
+    @Column(name = "id")
     public Long id;
+    @Column(name = "title")
     public String title;
+    @Column(name = "content")
     public String content;
+    @Column(name = "u_id")
     public Long uId;
+    @Column(name = "create_time")
     public long createTime;
+    @Column(name = "update_time")
     public long updateTime;
+    @Column(name = "level")
     public int level;
+    @Column(name = "pv")
+    public Long pv = 0L;
 
-    public long getId() {
-        return id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
     public String getTitle() {
@@ -72,6 +77,14 @@ public class Communication {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public Long getPv() {
+        return pv;
+    }
+
+    public void setPv(Long pv) {
+        this.pv = pv;
     }
 
     public static final int LEVEL_LOW = 2;

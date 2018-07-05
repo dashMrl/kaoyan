@@ -19,6 +19,9 @@
 | intro    | string | 渴🐔大学                 |
 | district | string | 地区，华中、华北        |
 | site     | string | https://www.hust.edu.cn |
+| cover    | string | https://www.hust.edu.cn |
+| logo     | string | https://www.hust.edu.cn |
+| pv       | long   |                                |
 
 
 
@@ -29,7 +32,7 @@
 | id      | long    | 0、1、3          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | int    | 学校id，external |
+| s_id    | int    | 学校id，external |
 
 
 
@@ -42,7 +45,7 @@
 | id      | long    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | long    | 学校id，external |
+| s_id    | long    | 学校id，external |
 
 
 
@@ -53,7 +56,7 @@
 | id      | long    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | long    | 学校id，external |
+| s_id    | long    | 学校id，external |
 
 
 
@@ -64,7 +67,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | long    | 学校id，external |
+| s_id    | long    | 学校id，external |
 
 
 
@@ -75,7 +78,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | long    | 学校id，external |
+| s_id    | long    | 学校id，external |
 
 
 
@@ -86,7 +89,7 @@
 | id      | int    | 0、1、2          |
 | title   | string | 标题             |
 | content | string | 正文             |
-| sId    | long    | 学校id，external |
+| s_id    | long    | 学校id，external |
 
 
 
@@ -97,8 +100,9 @@
 | id       | long    |                               |
 | title    | string |                               |
 | content  | stirng |                               |
-| u_id     | id     |                               |
+| u_id     | long     |                               |
 | create_time | long   |                               |
 | update_time | long   |                               |
 | level    | int    | 0、1、2，管理员==0，群众1<->2 |
+| pv    | long    |                                |
 
