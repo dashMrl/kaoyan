@@ -17,8 +17,9 @@
 | id       | long    | 0                       |
 | name     | string | 华中科技大学            |
 | intro    | string | 渴🐔大学                 |
-| district | string | 地区，华中、华北        |
+| district | string | 华中地区、华北地区、华东地区、其他地区 |
 | site     | string | https://www.hust.edu.cn |
+| collegescene | tinytext | http://efile.kaoyan.com/img/2014/05/29/154638_5386e5de2a40a.jpg |
 
 
 
