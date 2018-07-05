@@ -66,7 +66,7 @@ public class CommunicationController {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         } else {
-            commRepo.deleteById();
+            commRepo.deleteById(cid);
         }
     }
 
