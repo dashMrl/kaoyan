@@ -20,6 +20,7 @@
 | district | string | 华中地区、华北地区、华东地区、其他地区 |
 | site     | string | https://www.hust.edu.cn |
 | collegescene | tinytext | http://efile.kaoyan.com/img/2014/05/29/154638_5386e5de2a40a.jpg |
+| logo | tinytext | http://efile.kaoyan.com/p/2014-05-22/afcaa2600f10b19316e68a09c40d84ac.jpg |
 
 
 

@@ -198,7 +198,8 @@
           "intro": "intro",
           "district": "district",
           "site": "site",
-          "collegescene": "collegescene"
+          "collegescene": "collegescene",
+          "logo": "logo"
       },
       ...
   ]
