@@ -12,7 +12,8 @@ services:
     volumes:
       - /etc/locatime:/etc/locatime:ro
       - ./var/lib/mysql:/var/lib/mysql
-      - ./sql/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+      - ./mysql/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql:ro
+      - ./mysql/custom.cnf:/etc/mysql/conf.d/custom.cnf:ro
     networks:
       - kaoyan
 

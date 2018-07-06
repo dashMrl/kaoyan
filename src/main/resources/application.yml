@@ -16,6 +16,8 @@ spring:
     password: mysqlpwd
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mysql:3306/kaoyan?characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    druid:
+          connection-init-sqls: ["SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci"]
     max-active: 20
     max-idle: 8
     min-idle: 8
