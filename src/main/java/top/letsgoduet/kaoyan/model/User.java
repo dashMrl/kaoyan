@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
     @Id
+    @GeneratedValue
     @Column(name = "id")
     public Long id;
     @Column(name = "uanme", nullable = false)

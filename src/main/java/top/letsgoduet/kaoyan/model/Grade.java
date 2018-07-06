@@ -1,19 +1,17 @@
 package top.letsgoduet.kaoyan.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "grade")
 public class Grade {
     @Id
+    @GeneratedValue
     @Column(name = "id")
     public Long id;
     @Column(name = "title")
     public String title;
-    @Column(name = "content")
+    @Column(name = "content",columnDefinition = "text not null")
     public String content;
     @Column(name = "s_id")
     public Long sId;

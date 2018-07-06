@@ -6,11 +6,12 @@ import javax.persistence.*;
 @Table(name = "comm")
 public class Communication {
     @Id
+    @GeneratedValue
     @Column(name = "id")
     public Long id;
     @Column(name = "title")
     public String title;
-    @Column(name = "content")
+    @Column(name = "content",columnDefinition = "text not null", nullable = false)
     public String content;
     @Column(name = "u_id")
     public Long uId;
