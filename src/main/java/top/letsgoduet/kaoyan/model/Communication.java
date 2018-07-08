@@ -1,6 +1,7 @@
 package top.letsgoduet.kaoyan.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "comm")
@@ -16,20 +17,23 @@ public class Communication {
     @Column(name = "u_id")
     public Long uId;
     @Column(name = "create_time")
-    public long createTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date createTime;
     @Column(name = "update_time")
-    public long updateTime;
+    @Temporal(TemporalType.TIMESTAMP)
+    public Date updateTime;
     @Column(name = "level")
     public int level;
     @Column(name = "pv")
     public Long pv = 0L;
 
-    public void setId(Long id) {
-        this.id = id;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setuId(Long uId) {
-        this.uId = uId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -48,27 +52,27 @@ public class Communication {
         this.content = content;
     }
 
-    public long getuId() {
+    public Long getuId() {
         return uId;
     }
 
-    public void setuId(long uId) {
+    public void setuId(Long uId) {
         this.uId = uId;
     }
 
-    public long getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(long createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public long getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(long updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 

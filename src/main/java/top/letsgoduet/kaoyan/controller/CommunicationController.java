@@ -11,6 +11,7 @@ import top.letsgoduet.kaoyan.utils.CookieHelper;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,7 +46,7 @@ public class CommunicationController {
         comm.uId = uid;
         comm.title = title;
         comm.content = content;
-        comm.createTime = comm.updateTime = System.currentTimeMillis();
+        comm.createTime = comm.updateTime = new Date();
         if (AdminUtil.isAdmin(uid)) {
             comm.level = Communication.LEVEL_HIGH;
         } else {
@@ -105,7 +106,7 @@ public class CommunicationController {
         Communication comm = byId.get();
         comm.title = title.isEmpty() ? comm.title : title;
         comm.content = content.isEmpty() ? comm.content : content;
-        comm.updateTime = System.currentTimeMillis();
+        comm.updateTime = new Date();
         return commRepo.save(comm);
     }
 
