@@ -1,9 +1,13 @@
 package top.letsgoduet.kaoyan.model;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @Table(name = "comm")
 public class Communication {
     @Id
@@ -16,6 +20,7 @@ public class Communication {
     public String content;
     @Column(name = "u_id")
     public Long uId;
+
     @Column(name = "create_time")
     @Temporal(TemporalType.TIMESTAMP)
     public Date createTime;
