@@ -3,7 +3,7 @@ package top.letsgoduet.kaoyan.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "enrolment_regulation")
+@Table(name = "enrollment_regulation")
 public class EnrollmentRegulation {
     @Id
     @GeneratedValue
